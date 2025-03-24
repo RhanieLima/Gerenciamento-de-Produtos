@@ -117,11 +117,12 @@ void main() {
     print("4 - Listar Produtos");
     print("5 - Sair");
     String? escolha = stdin.readLineSync();
+    
 
     switch (escolha) {
       case "1":
         Produto? produtoSelecionado = acharProduto();
-        print("Digite a quantidade:");
+         print("Digite a quantidade:");
         int quantidade = int.parse(entradaString());
         if (produtoSelecionado != null) {
           produtoSelecionado.reduzirestoque(quantidade);
@@ -131,6 +132,12 @@ void main() {
 // teste
       case "2":
         print("Escolha um produto para repor estoque");
+        Produto? produtoSelecionado = acharProduto();
+        print("Digite a quantidade:");
+        int quantidade = int.parse(entradaString());
+        if (produtoSelecionado != null) {
+          produtoSelecionado.reporEstoque(quantidade);
+        }
         break;
 
       case "3":
